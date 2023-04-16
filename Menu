@@ -1,0 +1,48 @@
+def lin():
+    print('-=' * 22)
+
+
+lin()
+print(' ' * 12, '\033[36mCardápio Py Café\033[m')
+lin()
+bebidas = {'101': ['Café expresso', 5], '102': ['Chá Preto', 4], '103': ['Suco de laranja', 8]}
+salgados = {'201': ['Enroladinho de carne', 8], '202': ['Pastel de carne', 9], '203': ['Coxinha de frango', 7]}
+sobremesas = {'301': ['Milk Shake', 12], '302': ['Bolo de pote', 8], '303': ['Mousse de maracujá', 10]}
+menu = {'100': 'Bebidas', '200': 'Salgados', '300': 'Sobremesas', '400': 'Cardápio completo'}
+while True:
+    for v, i in menu.items():
+        print(f'{v:<8}{i:<25}')
+    lin()
+    esc = int(input('Digite a opção que deseja ver: '))
+    if esc == 400:
+        lin()
+        print(f'{"No":<8}{"Item":<25}{"Valor":>6}')
+        for v, k in bebidas.items():
+            print(f'{v:<8}{k[0]:<25} R${k[1]:>8.2f}')
+        for v, k in salgados.items():
+            print(f'{v:<8}{k[0]:<25} R${k[1]:>8.2f}')
+        for v, k in sobremesas.items():
+            print(f'{v:<8}{k[0]:<25} R${k[1]:>8.2f}')
+        lin()
+        break
+    else:
+        if esc == 100:
+            lin()
+            print(f'{"No":<8}{"Item":<25}{"Valor":>6}')
+            for v, k in bebidas.items():
+                print(f'{v:<8}{k[0]:<25} R${k[1]:>8.2f}')
+        elif esc == 200:
+            lin()
+            print(f'{"No":<8}{"Item":<25}{"Valor":>6}')
+            for v, k in salgados.items():
+                print(f'{v:<8}{k[0]:<25} R${k[1]:>8.2f}')
+        elif esc == 300:
+            lin()
+            print(f'{"No":<8}{"Item":<25}{"Valor":>6}')
+            for v, k in sobremesas.items():
+                print(f'{v:<8}{k[0]:<25} R${k[1]:>8.2f}')
+        ver = str(input('Deseja ver outro item? [S/N] ')).strip().upper()[0]
+        if ver == 'N':
+            break
+print(' ' * 12, '\033[36mVolte sempre!!!\033[m')
+lin()
