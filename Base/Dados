@@ -1,0 +1,23 @@
+def lin(txt):
+    print('-' * 40)
+    print(txt.center(40))
+    print('-' * 40)
+
+
+def menu_produtos(*itens):
+    lin('Bebidas')
+    print(f'{"Id.":<8} {"Nome":<20} {"Valor":>6}')
+    for i in bebidas:
+        print(f'{i["id"]:<8} {i["nome"]:<20}  R${i["valor"]:>6.2f}')
+    lin('Comidas')
+    for i in comidas:
+        print(f'{i["id"]:<8} {i["nome"]:<20}  R${i["valor"]:>6.2f}')
+
+
+bebidas = [{'id': 1, 'nome': 'Suco', 'valor': 6},
+           {'id': 2, 'nome': 'Refri', 'valor': 7},
+           {'id': 3, 'nome': 'Agua', 'valor': 3}]
+comidas = [{'id': 4, 'nome': 'Pão', 'valor': 6},
+           {'id': 5, 'nome': 'Coxinha', 'valor': 7},
+           {'id': 6, 'nome': 'Brigadeiro', 'valor': 3}]
+menu_produtos(bebidas, comidas)
